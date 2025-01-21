@@ -199,11 +199,12 @@ def test_single_session(data_name, loader_initfunc, model_architecture,
     single_session_tests)
 def test_single_session_auxvar(data_name, loader_initfunc, model_architecture,
                                solver_initfunc):
-    return  # TODO
+
+    pytest.skip("Not yet supported")
 
     loader = _get_loader(data_name, loader_initfunc)
     model = _make_model(loader.dataset)
-    behavior_model = _make_behavior_model(loader.dataset)
+    behavior_model = _make_behavior_model(loader.dataset)  # noqa: F841
 
     criterion = cebra.models.InfoNCE()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
