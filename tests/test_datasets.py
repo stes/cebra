@@ -68,7 +68,9 @@ def test_demo():
 
 @pytest.mark.requires_dataset
 def test_hippocampus():
+
     pytest.skip("Outdated")
+
     dataset = cebra.datasets.init("rat-hippocampus-single")
     loader = cebra.data.ContinuousDataLoader(
         dataset=dataset,
